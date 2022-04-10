@@ -1,7 +1,7 @@
 package bean;
 
 import entity.Alumno;
-import entity.BDModificadaListener;
+import event.BDModificadaListener;
 import event.BDModificadaEvent;
 import java.beans.*;
 import java.io.Serializable;

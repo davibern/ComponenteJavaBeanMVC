@@ -1,7 +1,7 @@
 package test;
 
 import bean.AlumnoBean;
-import entity.BDModificadaListener;
+import event.BDModificadaListener;
 import event.BDModificadaEvent;
 import java.sql.Date;
 import java.util.logging.Level;
