@@ -19,9 +19,9 @@ public class AccedeBD implements BDModificadaListener {
         this.alumnos.addBDModificadaListener((BDModificadaListener) this);
     }
     
-        public void listado()
-    {
-        for(int i=0; i<4; i++)
+    public void listado() {
+        
+        for(int i = 0; i < this.alumnos.size() ; i++)
         {
             alumnos.seleccionarFilas(i);
             System.out.println("Alumno " + i + "\n\tDNI:" + alumnos.getDni());
@@ -32,18 +32,19 @@ public class AccedeBD implements BDModificadaListener {
         }
     }
 
-    void anade()
-    {
-        alumnos.setDni("98765432A");
-        alumnos.setNombre("Asunción");
-        alumnos.setApellidos("de las Heras López");
-        alumnos.setDireccion("C/Felix Rodríguez de la Fuente, nº27");
-        alumnos.setFechaNacimiento(Date.valueOf("1987-06-05"));
+    void anade() {
+        
+        alumnos.setDni("41526277W");
+        alumnos.setNombre("Angelica");
+        alumnos.setApellidos("Swartz Lacaster");
+        alumnos.setDireccion("C/ Simon, nº 97");
+        alumnos.setFechaNacimiento(Date.valueOf("1982-03-13"));
         try {
             alumnos.addAlumno();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AccedeBD.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     @Override

@@ -217,6 +217,10 @@ public class AlumnoBean implements Serializable {
         
     }
     
+    public int size() {
+        return this.alumnos.size();
+    }
+    
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         this.propertySupport.addPropertyChangeListener(listener);
     }
