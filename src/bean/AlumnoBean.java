@@ -1,6 +1,7 @@
 package bean;
 
 import entity.Alumno;
+import entity.BDModificadaListener;
 import event.BDModificadaEvent;
 import java.beans.*;
 import java.io.Serializable;
@@ -229,13 +230,6 @@ public class AlumnoBean implements Serializable {
     
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         this.propertySupport.removePropertyChangeListener(listener);
-    }
-    
-    /**
-     * Define la interfaz para el nuevo tipo de evento
-     */
-    public interface BDModificadaListener extends EventListener {
-        public void capturarBDModificada(BDModificadaEvent ev);
     }
     
     /**

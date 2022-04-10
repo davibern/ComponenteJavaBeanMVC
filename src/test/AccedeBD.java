@@ -1,7 +1,7 @@
 package test;
 
 import bean.AlumnoBean;
-import bean.AlumnoBean.BDModificadaListener;
+import entity.BDModificadaListener;
 import event.BDModificadaEvent;
 import java.sql.Date;
 import java.util.logging.Level;
@@ -35,11 +35,11 @@ public class AccedeBD implements BDModificadaListener {
 
     void anade() {
         
-        alumnos.setDni("45223362F");
-        alumnos.setNombre("Ross");
-        alumnos.setApellidos("Mclister Steward");
-        alumnos.setDireccion("C/ Lean, nº 1 A");
-        alumnos.setFechaNacimiento(Date.valueOf("1993-10-29"));
+        alumnos.setDni("23327766F");
+        alumnos.setNombre("Daniel");
+        alumnos.setApellidos("Fernández León");
+        alumnos.setDireccion("C/ Marie Curie, nº 27");
+        alumnos.setFechaNacimiento(Date.valueOf("1999-12-31"));
         try {
             alumnos.addAlumno();
         } catch (ClassNotFoundException ex) {
