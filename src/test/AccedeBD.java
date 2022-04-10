@@ -1,14 +1,15 @@
 package test;
 
-import alumno.AlumnoBean;
-import alumno.AlumnoBean.BDModificadaListener;
+import bean.AlumnoBean;
+import bean.AlumnoBean.BDModificadaListener;
+import event.BDModificadaEvent;
 import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author david
+ * @author davibern
  */
 public class AccedeBD implements BDModificadaListener {
     
@@ -34,11 +35,11 @@ public class AccedeBD implements BDModificadaListener {
 
     void anade() {
         
-        alumnos.setDni("41526277W");
-        alumnos.setNombre("Angelica");
-        alumnos.setApellidos("Swartz Lacaster");
-        alumnos.setDireccion("C/ Simon, nº 97");
-        alumnos.setFechaNacimiento(Date.valueOf("1982-03-13"));
+        alumnos.setDni("45223362F");
+        alumnos.setNombre("Ross");
+        alumnos.setApellidos("Mclister Steward");
+        alumnos.setDireccion("C/ Lean, nº 1 A");
+        alumnos.setFechaNacimiento(Date.valueOf("1993-10-29"));
         try {
             alumnos.addAlumno();
         } catch (ClassNotFoundException ex) {
@@ -48,7 +49,7 @@ public class AccedeBD implements BDModificadaListener {
     }
 
     @Override
-    public void capturarBDModificada(AlumnoBean.BDModificadaEvent ev) {
+    public void capturarBDModificada(BDModificadaEvent ev) {
         System.out.println("Se ha añadido un elemento a la base de datos");
     }
     

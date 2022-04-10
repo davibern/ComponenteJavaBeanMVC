@@ -1,5 +1,7 @@
-package alumno;
+package bean;
 
+import entity.Alumno;
+import event.BDModificadaEvent;
 import java.beans.*;
 import java.io.Serializable;
 import java.sql.Connection;
@@ -17,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author david
+ * @author davibern
  */
 public class AlumnoBean implements Serializable {
     
@@ -179,7 +181,7 @@ public class AlumnoBean implements Serializable {
             Alumno a = new Alumno();
             a = (Alumno) alumnos.elementAt(i);
             this.dni = a.dni;
-            this.nombre = a.dni;
+            this.nombre = a.nombre;
             this.apellidos = a.apellidos;
             this.direccion = a.direccion;
             this.fechaNacimiento = a.fechaNacimiento;
@@ -227,46 +229,6 @@ public class AlumnoBean implements Serializable {
     
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         this.propertySupport.removePropertyChangeListener(listener);
-    }
-    
-    /**
-     * Clase auxiliar que se usará para crear un vector privado de alumnos
-     */
-    private class Alumno {
-        
-        // Atributos
-        protected String dni;
-        protected String nombre;
-        protected String apellidos;
-        protected String direccion;
-        protected Date fechaNacimiento;
-        
-        /**
-         * Constructor si parámetros
-         */
-        public Alumno() {}
-        
-        public Alumno (String dni, String nombre, String apellidos, String direccion, Date fechaNacimiento) {
-            this.dni = dni;
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.direccion = direccion;
-            this.fechaNacimiento = fechaNacimiento;
-        }
-        
-    }
-    
-    /**
-     * Código para añadir un nuevo alumno a la base de datos.
-     * Cada vez que se modifica el estado de la BD se genera un evento para 
-     * que se recargue el componente.
-     */
-    public class BDModificadaEvent extends EventObject {
-
-        public BDModificadaEvent(Object o) {
-            super(o);
-        }
-        
     }
     
     /**

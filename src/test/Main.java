@@ -2,7 +2,7 @@ package test;
 
 /**
  *
- * @author david
+ * @author davibern
  */
 public class Main {
     /**
